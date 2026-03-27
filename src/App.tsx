@@ -4,7 +4,7 @@
  */
 
 import { motion } from "motion/react";
-import { Users, Layout, ChevronRight } from "lucide-react";
+import { Users, Layout, ChevronRight, Home, Compass, MessageSquare, User } from "lucide-react";
 
 export default function App() {
   return (
@@ -129,6 +129,26 @@ export default function App() {
           © 2026 NexusVillage Spatial Web Engine. All rights reserved.
         </p>
       </footer>
+
+      {/* Fixed Footer Bar / Bottom Nav */}
+      <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 bg-white/70 backdrop-blur-xl border border-white/40 px-8 py-4 rounded-full shadow-[0_8px_32px_rgba(0,0,0,0.1)] flex items-center gap-10">
+        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="flex flex-col items-center gap-1 text-blue-600">
+          <Home className="w-6 h-6" />
+          <span className="text-[10px] font-bold">Home</span>
+        </motion.button>
+        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-800 transition-colors">
+          <Compass className="w-6 h-6" />
+          <span className="text-[10px] font-bold">Explore</span>
+        </motion.button>
+        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-800 transition-colors">
+          <MessageSquare className="w-6 h-6" />
+          <span className="text-[10px] font-bold">Chat</span>
+        </motion.button>
+        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-800 transition-colors">
+          <User className="w-6 h-6" />
+          <span className="text-[10px] font-bold">Profile</span>
+        </motion.button>
+      </nav>
     </div>
   );
 }
