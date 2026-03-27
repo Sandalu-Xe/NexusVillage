@@ -3,12 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { Users, Layout, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import VillageWorld from "./components/VillageWorld";
 
 export default function App() {
+  const [isExploring, setIsExploring] = useState(false);
+
   return (
     <div className="min-h-screen bg-[#f0f4f8] font-sans text-slate-800 selection:bg-blue-100">
+      <AnimatePresence>
+        {isExploring && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100]"
+          >
+            <VillageWorld onExit={() => setIsExploring(false)} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Header */}
       <header className="fixed top-0 w-full z-50 bg-white/20 backdrop-blur-md border-b border-white/30 p-4 flex justify-between items-center shadow-sm">
         <div className="flex items-center gap-2">
@@ -17,7 +34,10 @@ export default function App() {
           </div>
           <span className="text-xl font-semibold tracking-tight text-slate-900">NexusVillage</span>
         </div>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-medium shadow-md active:scale-95 transition-all duration-200">
+        <button 
+          onClick={() => setIsExploring(true)}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-medium shadow-md active:scale-95 transition-all duration-200"
+        >
           Enter Space
         </button>
       </header>
@@ -35,7 +55,8 @@ export default function App() {
           <motion.div 
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white group"
+            className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white group cursor-pointer"
+            onClick={() => setIsExploring(true)}
           >
             <img 
               alt="Isometric 3D view of collaborative space" 
@@ -102,6 +123,7 @@ export default function App() {
             <motion.button 
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onClick={() => setIsExploring(true)}
               className="w-full bg-slate-900 text-white py-5 rounded-2xl font-bold text-lg shadow-xl shadow-slate-200 hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
             >
               Start Exploring
