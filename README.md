@@ -79,5 +79,11 @@ To run this project locally or deploy it yourself, you will need:
     ```
 
 ---
+---
+<img width="1680" height="952" alt="image" src="https://github.com/user-attachments/assets/9c5ea595-41ed-4293-b194-e356eaf1225a" />
+
+---
+
+
 
 Developed with ❤️ for the future of the web.
