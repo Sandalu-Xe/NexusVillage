@@ -41,6 +41,7 @@ This project leverages the latest in web development to create a high-fidelity 3
 ### **Build & Deployment**
 *   **[Vite 6](https://vitejs.dev/):** The next-generation frontend tool for lightning-fast development and builds.
 *   **[Vercel](https://vercel.com/):** Optimized hosting with custom client-side routing configuration.
+*   **[Vercel](https://nexus-village.vercel.app/):** deployemnt this web sites
 
 ---
 
@@ -83,7 +84,12 @@ To run this project locally or deploy it yourself, you will need:
 <img width="1680" height="952" alt="image" src="https://github.com/user-attachments/assets/9c5ea595-41ed-4293-b194-e356eaf1225a" />
 
 ---
+---
+<img width="1680" height="962" alt="image" src="https://github.com/user-attachments/assets/62cfc3f9-51b8-4912-87e0-91533ad3492f" />
 
 
 
-Developed with ❤️ for the future of the web.
+
+
+
+Developed with Sandalu ❤️ for the future of the web.
